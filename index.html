@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="vieport"/>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+    <script>
+        const firebaseConfig = {
+  apiKey: "AIzaSyDAk3VfnEZZNXyfwkp6Qh_CNo70-uumagE",
+  authDomain: "projecto255.firebaseapp.com",
+  databaseURL: "https://projecto255-default-rtdb.firebaseio.com",
+  projectId: "projecto255",
+  storageBucket: "projecto255.appspot.com",
+  messagingSenderId: "108026579040",
+  appId: "1:108026579040:web:574c4dd8067a0ede451b05",
+  measurementId: "G-86FB0FB3FT"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig)
+function ledOn() {firebase.database().ref('LAMPADA').set(
+    {estado:'LIGADA'})
+}
+function ledOff() {firebase.database().ref('LAMPADA').set(
+    {estado:'DESLIGADA'})
+}
+    </script>
+    <body>
+        <header>
+            <h2>TME Education</h2> 
+
+        <h3>Universidade Joaquim Chissano</h3>
+        <h3>Curso de Arduino Nivel II(IoT) </h3>
+    </header>
+        <fieldset>
+            <legend>Lampada</legend> 
+            <div>
+                <button onclick="ledOn()">ligar</button> 
+                <button onclick="ledOff()">deligar</button>
+            </div>
+        </fieldset>
+    </body>
+</html>
